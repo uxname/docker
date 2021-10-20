@@ -1,0 +1,6 @@
+version: '2'
+services:
+  app:
+    image: 'nats:latest'
+    ports:
+      - '4222:4222'

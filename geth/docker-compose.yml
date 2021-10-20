@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+    geth:
+        image: ethereum/client-go
+        restart: unless-stopped
+        command: --syncmode "fast" --rpcapi "db,personal,eth,net,web3" --rpccorsdomain='*' --rpc --rpcaddr="0.0.0.0" --ws --ws.addr="0.0.0.0" --ws.port=8546 --ws.origins "*"
+        volumes:
+            - ./data/ethereum:/root/.ethereum:rw
+        ports:
+            - "30303:30303"
+            - "30303:30303/udp"
+            - "8545:8545"
+            - "8546:8546"

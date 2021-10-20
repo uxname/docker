@@ -1,0 +1,12 @@
+version: "2"
+services:
+    parity-local:
+        image: parity/parity
+        working_dir: /parity/
+        command: --mode active --tracing off --pruning fast --db-compaction ssd --cache-size 1024 --jsonrpc-interface all --jsonrpc-cors * --ui-interface all --ws-interface all --ws-origins all --chain mainnet
+        ports:
+            - 8545:8545
+            - 8546:8546
+            - 8180:8180
+        volumes:
+            - ./paritydata:/root/.local

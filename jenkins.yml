@@ -1,0 +1,14 @@
+version: "2"
+services:
+    jenkins:
+        image: "jenkins/jenkins:lts"
+        restart: always
+        labels:
+            kompose.service.type: nodeport
+        ports:
+            - "8088:8080"
+            - "8443:8443"
+            - "8500:50000"
+        volumes:
+            - "./data/jenkins_config:/jenkins_config"
+            - "./data/jenkins_home:/var/jenkins_home"

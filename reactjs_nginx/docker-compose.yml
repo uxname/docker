@@ -1,0 +1,10 @@
+version: "2"
+
+services:
+  app:
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: .
+    ports:
+      - "8080:80"

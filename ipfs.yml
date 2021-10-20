@@ -1,0 +1,11 @@
+version: "2"
+
+services:
+    ipfs:
+        image: jbenet/go-ipfs
+        container_name: ipfs_daemon
+        ports:
+            - "5001:5001"
+            - "4001:4001"
+        volumes:
+            - ./data/ipfs:/data/ipfs
